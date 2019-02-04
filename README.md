@@ -2,6 +2,11 @@
 
 Utilities for working with Google Sheets on pandas and python.
 
+# Installation
+
+```
+python3 -m pip install git+https://github.com/ebravofm/Gpandas.git
+```
 # read_gexcel
 
 Use pandas' read_excel function on a google drive workbook. Get sharing link and update permissions as public. No need to authenticate.
