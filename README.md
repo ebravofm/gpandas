@@ -11,7 +11,7 @@ python3 -m pip install git+https://github.com/ebravofm/Gpandas.git
 
 Use pandas' read_excel function on a google drive workbook. Get sharing link and update permissions as public. No need to authenticate.
 ```python
-from Gpandas import read_gexcel
+from gpandas import read_gexcel
 
 df = read_gexcel('https://drive.google.com/open?id=18ID3C6mhTMgISlqkd6L1NOfWRdxiEwdMqAWvSKkvcd8')
 
