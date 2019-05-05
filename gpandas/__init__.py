@@ -2,25 +2,40 @@ import requests
 import pandas as pd
 from io import BytesIO
 
-def read_gexcel(id, **pd_read_excel_args):
-    '''
-    Read Google Sheets worksheet as pandas dataframe. id argument is the id parameter in workbook url.
-    '''
+def id_from_link(link):
+    
+    if 'google.com' not in link:
+        id = link
+    
+    elif '/d/' in link:
+        split = link.split('/')
+        i = split.index('d')
+        id = split[i+1]
+    
+    elif 'id=' in link:
+        split1 = link.split('id=')[1]
+        id = split1.split('/')[0]
+        
+    return id
 
-    excel_data = gExcelFile(id)
+def read_gexcel(link, **pd_read_excel_args):
+    '''
+    Read Google Sheets worksheet as pandas dataframe.
+    '''
+    
+    excel_data = gExcelFile(link)
     
     return pd.read_excel(excel_data, **pd_read_excel_args)
 
 
-def gExcelFile(id):
+def gExcelFile(link):
     '''
-    Read Google Sheets workbook as pandas ExcelFile. id argument is the id parameter in workbook url.
+    Read Google Sheets workbook as pandas ExcelFile.
     '''
-
-    if 'id=' in id:
-        id = id.split('id=')[1]
     
-    dl = 'https://docs.google.com/spreadsheets/d/{0}/export?format=xlsx&id={0}'.format(id)
+    id = id_from_link(link)
+    
+    dl = f'https://docs.google.com/spreadsheets/d/{id}/export?format=xlsx&id={id}'
     r = requests.get(dl) 
     excel_data = pd.ExcelFile(BytesIO(r.content))
 
