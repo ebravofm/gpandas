@@ -4,7 +4,7 @@ setup(
     name='gpandas',
     version = '0.1',
     url='https://github.com/ebravofm/gpandas',
-    keywords = 'press news scraper news extractor twitter mysql information retrieval',
+    keywords = 'pandas dataframes google-sheets google-spreadsheets python data data-science data-analytics google sheets oauth2',
     author='Emilio Bravo',
     author_email='ebravofm@gmail.com',
     packages=['gpandas'],
