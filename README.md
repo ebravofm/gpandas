@@ -1,11 +1,11 @@
 # Gpandas
 
-Utilities for working with Google Sheets on pandas and python.
+Simple tool for quickly reading a public google spreasheet. Does not require Google OAuth
 
 # Installation
 
 ```
-python3 -m pip install git+https://github.com/ebravofm/Gpandas.git
+python3 -m pip install git+https://github.com/ebravofm/gpandas.git
 ```
 # read_gexcel
 
@@ -13,7 +13,7 @@ Use pandas' read_excel function on a google drive workbook. Get sharing link and
 ```python
 import gpandas as gpd
 
-df = gpd.read_gexcel('https://drive.google.com/open?id=18ID3C6mhTMgISlqkd6L1NOfWRdxiEwdMqAWvSKkvcd8')
+df = gpd.read_excel('https://drive.google.com/open?id=18ID3C6mhTMgISlqkd6L1NOfWRdxiEwdMqAWvSKkvcd8')
 
 #    Countries Code
 # 0      Chile   CL
