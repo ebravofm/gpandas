@@ -9,5 +9,5 @@ setup(
     install_requires=['pandas', 'requests', 'xlrd'],
     version='0.1',
     license='MIT',
-    description='Read Google Sheets excel as pandas DataFrame.',
+    description='Simple tool for quickly reading a public google spreasheet. Does not require Google OAuth.',
 )
